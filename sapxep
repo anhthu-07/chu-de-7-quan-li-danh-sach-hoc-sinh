@@ -1,0 +1,29 @@
+// =====================================================
+// PHAN 3 - SAP XEP DANH SACH
+// Thanh vien 3 phu trach
+// =====================================================
+
+class SapXepHocSinh {
+public:
+
+    // Sap xep diem trung binh giam dan
+    void sapXep(DanhSachHocSinh &dshs) {
+
+        for (int i = 0; i < dshs.n - 1; i++) {
+
+            for (int j = i + 1; j < dshs.n; j++) {
+
+                if (dshs.ds[i].diemTB < dshs.ds[j].diemTB) {
+
+                    HocSinh temp = dshs.ds[i];
+
+                    dshs.ds[i] = dshs.ds[j];
+
+                    dshs.ds[j] = temp;
+                }
+            }
+        }
+
+        cout << "Da sap xep theo diem trung binh giam dan!\n";
+    }
+};
